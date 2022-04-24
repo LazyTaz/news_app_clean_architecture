@@ -9,20 +9,8 @@ import 'package:news_app/presentation/home/widgets/article_cell_widget.dart';
 
 import '../../../injector.dart';
 
-class HomePage extends StatefulWidget {
+class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
-
-  @override
-  State<HomePage> createState() => _HomePageState();
-}
-
-class _HomePageState extends State<HomePage> {
-  @override
-  void initState() {
-    magic.get<HomeBloc>().load();
-
-    super.initState();
-  }
 
   @override
   Widget build(BuildContext context) {

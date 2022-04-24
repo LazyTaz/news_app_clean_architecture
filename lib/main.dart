@@ -3,12 +3,16 @@ import 'package:go_router/go_router.dart';
 import 'package:news_app/domain/home/entities/article.dart';
 import 'package:news_app/injector.dart';
 import 'package:news_app/presentation/details/pages/details_page.dart';
+import 'package:news_app/presentation/home/blocs/home_bloc.dart';
 import 'package:news_app/presentation/home/pages/home_page.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
 
   initializeInjector();
+
+  /// Initiliaze home bloc
+  magic.get<HomeBloc>().load();
 
   runApp(const MyApp());
 }
