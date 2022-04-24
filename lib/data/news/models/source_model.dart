@@ -1,4 +1,4 @@
-import '../../../domain/home/entities/source.dart';
+import '../../../domain/news/entities/source.dart';
 
 class SourceModel extends Source {
   const SourceModel({

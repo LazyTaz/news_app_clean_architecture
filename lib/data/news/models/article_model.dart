@@ -1,4 +1,4 @@
-import '../../../domain/home/entities/article.dart';
+import '../../../domain/news/entities/article.dart';
 import 'source_model.dart';
 
 class ArticleModel extends Article {

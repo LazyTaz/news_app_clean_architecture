@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:news_app/domain/home/entities/article.dart';
 import 'package:news_app/injector.dart';
 import 'package:news_app/presentation/details/pages/details_page.dart';
 import 'package:news_app/presentation/home/blocs/home_bloc.dart';
 import 'package:news_app/presentation/home/pages/home_page.dart';
+
+import 'domain/news/entities/article.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();

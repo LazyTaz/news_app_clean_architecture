@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:news_app/domain/home/entities/article.dart';
 
 import '../../../constants.dart';
+import '../../../domain/news/entities/article.dart';
 
 class DetailsPage extends StatelessWidget {
   final Article? article;

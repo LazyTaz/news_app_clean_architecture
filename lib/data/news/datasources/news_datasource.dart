@@ -1,8 +1,8 @@
 import 'package:dartz/dartz.dart';
-import 'package:news_app/data/home/datasources/news_api_datasource_impl.dart';
 
 import '../../../../core/error/failure.dart';
 import '../models/news_model.dart';
+import 'news_api_datasource_impl.dart';
 
 /// We only support one API for now
 enum NewsDataSourceEnum {

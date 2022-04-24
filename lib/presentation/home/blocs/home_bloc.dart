@@ -2,9 +2,10 @@ import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:news_app/core/error/failure.dart';
 import 'package:news_app/core/usecases/usecase.dart';
-import 'package:news_app/domain/home/entities/news.dart';
-import 'package:news_app/domain/home/usecases/get_top_news.dart';
-import 'package:news_app/domain/home/usecases/search_news.dart';
+
+import '../../../domain/news/entities/news.dart';
+import '../../../domain/news/usecases/get_top_news.dart';
+import '../../../domain/news/usecases/search_news.dart';
 
 part 'home_state.dart';
 part 'home_events.dart';
