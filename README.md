@@ -11,7 +11,7 @@ News app using :
 
 ## Get started
 
-* Get your API Key by creating your account on https://newsapi.org/
+* Get your API Key by creating an account on https://newsapi.org/
 * Put your key on constants.dart 
 
 ## TODO
