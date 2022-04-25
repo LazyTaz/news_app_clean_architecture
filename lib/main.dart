@@ -12,7 +12,7 @@ void main() {
 
   initializeInjector();
 
-  /// Initiliaze home bloc
+  /// Start initiliaze home bloc
   magic.get<HomeBloc>().load();
 
   runApp(const MyApp());
