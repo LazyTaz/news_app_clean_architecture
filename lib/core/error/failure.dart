@@ -31,8 +31,9 @@ class ApiFailure extends Failure {
 
 /// Domain logic related failure
 class DomainFailure extends Failure {
-  // TODO
-  const DomainFailure() : super(message: "Domain failure");
+  DomainFailure({
+    required Exception exception,
+  }) : super(message: exception.toString(), exception: exception);
 }
 
 class UnknownFailure extends Failure {

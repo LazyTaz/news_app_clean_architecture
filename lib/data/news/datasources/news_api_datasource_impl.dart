@@ -23,8 +23,7 @@ class NewsApiDataSourceImpl implements NewsDataSource {
     _newsApi = NewsApi(dio);
   }
 
-  @override
-  Future<Either<Failure, NewsModel>> getTopHeadlines() async {
+  Future<Either<Failure, NewsModel>> _getTopHeadlines() async {
     try {
       var result = await _newsApi.getTopHeadlines();
 
@@ -34,14 +33,25 @@ class NewsApiDataSourceImpl implements NewsDataSource {
     }
   }
 
-  @override
-  Future<Either<Failure, NewsModel>> searchHeadlines(String search) async {
+  Future<Either<Failure, NewsModel>> _searchHeadlines(String search) async {
     try {
       var result = await _newsApi.searchHeadlines(search);
 
       return right(result);
     } catch (ex) {
       return Left(ex is DioError ? ex.error : const UnknownFailure());
+    }
+  }
+
+  @override
+  Future<Either<Failure, NewsModel>> getHeadline(NewsDataType type, {Object? arg}) async {
+    switch (type) {
+      case NewsDataType.topHeadlines:
+        return _getTopHeadlines();
+      case NewsDataType.searchHeadlines:
+        return _searchHeadlines(arg as String);
+      default:
+        return Left(DomainFailure(exception: Exception("NewsAPI datasource does not provide such information")));
     }
   }
 }

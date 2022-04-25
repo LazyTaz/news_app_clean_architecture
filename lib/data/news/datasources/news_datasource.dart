@@ -9,10 +9,13 @@ enum NewsDataSourceEnum {
   newsapi,
 }
 
-/// We may want to be more generic here
+enum NewsDataType {
+  topHeadlines,
+  searchHeadlines,
+}
+
 abstract class NewsDataSource {
-  Future<Either<Failure, NewsModel>> getTopHeadlines();
-  Future<Either<Failure, NewsModel>> searchHeadlines(String search);
+  Future<Either<Failure, NewsModel>> getHeadline(NewsDataType type, {Object? arg});
 
   factory NewsDataSource.named(NewsDataSourceEnum source) {
     switch (source) {
