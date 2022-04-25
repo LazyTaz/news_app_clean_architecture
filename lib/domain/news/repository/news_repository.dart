@@ -5,7 +5,7 @@ import '../../../data/news/datasources/news_datasource.dart';
 import '../entities/news.dart';
 
 /// This class cast `NewsDataSource` return value
-/// from *model* NewsModel to *entitie* News
+/// from `model NewsModel` to `entitie News`
 /// Which allows us to go from data layer to domain layer safely.
 class NewsRepository {
   final NewsDataSource newsDataSource;
