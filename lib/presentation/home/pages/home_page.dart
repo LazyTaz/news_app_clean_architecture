@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:news_app/core/helpers/snack_bar_helper.dart';
+import 'package:news_app/core/helpers/throttle_helper.dart';
 import 'package:news_app/presentation/home/blocs/home_bloc.dart';
 import 'package:news_app/presentation/home/widgets/article_cell_widget.dart';
 
@@ -35,29 +36,21 @@ class _HomePageSearchBar extends StatefulWidget {
 }
 
 class _HomePageSearchBarState extends State<_HomePageSearchBar> {
-  Timer? timer;
-  String? textValue;
-
-  void _textChanged(String val) {
-    textValue = val;
-
-    if (timer != null) {
-      timer?.cancel();
-    }
-
-    timer = Timer(const Duration(milliseconds: 300), () {
-      if (textValue == null || textValue == '') {
+  Throttle throttle = Throttle(
+    timeInMS: 300,
+    callBack: (value) {
+      if (value == null || value == '') {
         magic.get<HomeBloc>().load();
       } else {
-        magic.get<HomeBloc>().search(textValue!);
+        magic.get<HomeBloc>().search(value!);
       }
-    });
-  }
+    },
+  );
 
   @override
   void dispose() {
     super.dispose();
-    timer?.cancel();
+    throttle.cancel();
   }
 
   @override
@@ -65,7 +58,7 @@ class _HomePageSearchBarState extends State<_HomePageSearchBar> {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: TextFormField(
-        onChanged: _textChanged,
+        onChanged: (value) => throttle.restart(value),
         decoration: InputDecoration(
           prefixIcon: const Icon(Icons.search),
           contentPadding: const EdgeInsets.all(8.0),
