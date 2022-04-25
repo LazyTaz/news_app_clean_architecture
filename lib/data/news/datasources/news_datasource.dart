@@ -9,6 +9,7 @@ enum NewsDataSourceEnum {
   newsapi,
 }
 
+/// Currently supported features
 enum NewsDataType {
   topHeadlines,
   searchHeadlines,
