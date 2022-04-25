@@ -1,6 +1,6 @@
-import 'package:news_app/core/error/failure.dart';
+import '../../../core/error/failure.dart';
 import 'package:dartz/dartz.dart';
-import 'package:news_app/data/news/datasources/news_datasource.dart';
+import '../../../data/news/datasources/news_datasource.dart';
 
 import '../entities/news.dart';
 

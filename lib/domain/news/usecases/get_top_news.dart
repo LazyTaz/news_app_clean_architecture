@@ -1,7 +1,7 @@
 import 'package:dartz/dartz.dart';
-import 'package:news_app/core/error/failure.dart';
-import 'package:news_app/core/usecases/usecase.dart';
-import 'package:news_app/domain/news/repository/news_repository.dart';
+import '../../../core/error/failure.dart';
+import '../../../core/usecases/usecase.dart';
+import '../repository/news_repository.dart';
 
 import '../entities/news.dart';
 

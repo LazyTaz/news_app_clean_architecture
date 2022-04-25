@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:news_app/core/error/failure.dart';
+import '../error/failure.dart';
 
 class ErrorInterceptor extends InterceptorsWrapper {
   @override

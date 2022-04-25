@@ -1,6 +1,6 @@
 import 'package:get_it/get_it.dart';
-import 'package:news_app/domain/news/repository/news_repository.dart';
-import 'package:news_app/presentation/home/blocs/home_bloc.dart';
+import 'domain/news/repository/news_repository.dart';
+import 'presentation/home/blocs/home_bloc.dart';
 import 'data/news/datasources/news_datasource.dart';
 import 'domain/news/usecases/get_top_news.dart';
 import 'domain/news/usecases/search_news.dart';

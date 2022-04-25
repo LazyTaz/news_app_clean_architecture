@@ -3,10 +3,10 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import 'package:news_app/core/helpers/snack_bar_helper.dart';
-import 'package:news_app/core/helpers/throttle_helper.dart';
-import 'package:news_app/presentation/home/blocs/home_bloc.dart';
-import 'package:news_app/presentation/home/widgets/article_cell_widget.dart';
+import '../../../core/helpers/snack_bar_helper.dart';
+import '../../../core/helpers/throttle_helper.dart';
+import '../blocs/home_bloc.dart';
+import '../widgets/article_cell_widget.dart';
 
 import '../../../injector.dart';
 
