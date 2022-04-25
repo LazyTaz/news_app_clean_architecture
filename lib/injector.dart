@@ -8,7 +8,7 @@ import 'domain/news/usecases/search_news.dart';
 GetIt magic = GetIt.instance;
 
 void initializeInjector() {
-  /// if you want to chose one API over another, it's here.
+  /// If you want to chose one API over another, it's here.
   var newsApiDataSource = NewsDataSource.named(NewsDataSourceEnum.newsapi);
   magic.registerSingleton<NewsDataSource>(newsApiDataSource);
   magic.registerSingleton(NewsRepository(newsDataSource: magic()));
